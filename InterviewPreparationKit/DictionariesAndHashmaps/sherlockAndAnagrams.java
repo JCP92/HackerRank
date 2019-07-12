@@ -7,11 +7,10 @@
             char[] arr = new char[s.length()];
             for(int j = i, m = 0; j < s.length(); j++){ //letter
                 arr[m] = s.charAt(j);
-                //sort
-                
+                //sort            
                 Arrays.sort(arr);
                 String insert = new String(arr);
-                System.out.println("Adding: " + insert);
+
                 if(letterCount.containsKey(insert) && counter.containsKey(insert)){
                     counter.put(insert, counter.get(insert) + 1);
                 }else if(letterCount.containsKey(insert) && !counter.containsKey(insert))
@@ -21,14 +20,8 @@
             }
         }
         for(String i : counter.keySet()){
-            int num = counter.get(i);
-            
-            System.out.printf("Name %s :: amount %d%n", i, num);
-            
+            int num = counter.get(i);            
             count += num * (num-1)/2;
-            
         }
-
         return count;
-
     }
